@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apm": "^1.0.2",
     "body-parser": "^1.19.0",
     "chalk": "^4.1.1",
     "connect-livereload": "^0.6.1",
