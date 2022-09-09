@@ -1,43 +1,26 @@
-include your HTML opening tags
-and your hidden "head" tag
-and your "title" tag
-
-
-full-width wrapper div
-header containing: YOUR NAME's Labs For INST377
-container div
-left div
-sub-header saying "albums"
-Your top 5 albums in an ordered list
-right div (main div for the site)
-sub-header saying "image carousel"
-div to contain four images
-four images of mochi from your readings, all square (they're four different image types!)
-div to contain a description or text
-description of images
-
-
-full-width page footer containing your github account name and a link to your gitHub account
-
-<!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
 </head>
 <body>
   <div>
-    <h1>Prince Okpoziakpo's labls for INST377</h1>
+    <h1><header>Prince Okpoziakpo's labls for INST377</header></h1>
     <div>
-      <h2>albums</h2>
-      <ol>
-        <li>Saba - Bucket List Project</li>
-        <li>Schoolboy Q - Blank Face LP</li>
-        <li>Wizkid - Sounds From the Other Side</li>
-        <li>Starrah - The Longest Interlude</li>
-        <li>Smino - blkswn</li>
-      </ol>
+      <div class="left-div">
+        <h2>albums</h2>
+        <ol>
+          <li>Saba - Bucket List Project</li>
+          <li>Schoolboy Q - Blank Face LP</li>
+          <li>Wizkid - Sounds From the Other Side</li>
+          <li>Starrah - The Longest Interlude</li>
+          <li>Smino - blkswn</li>
+        </ol>
+      </div>
     </div>
-    <div>
+    <div class="right-div">
       <h2>image carousel</h2>
       <div>
         <img src="images/mochi.gif" alt="mochi-gif"/>
@@ -45,7 +28,13 @@ full-width page footer containing your github account name and a link to your gi
         <img src="images/mochi.png" alt="mochi-png"/>
         <img src="images/mochi.svg" alt="mochi-svg"/>
       </div>
+      <div>
+        Mochi is a Japanese rice cake made of mochigome and other ingredients.  
+      </div>
     </div>
   </div>
+  <footer>
+    manny-pi: <a href="https://github.com/manny-pi">manny-pi</a>
+  </footer>
 </body>
 </html> 
