@@ -1,7 +1,7 @@
 // Fires when the initial HTML document has been completely loaded, and parsed
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid');
-  const squares = Array.from(document.querySelectorAll('.grid div'));
+  let squares = Array.from(document.querySelectorAll('.grid div'));
   const ScoreDisplay = document.querySelector('#score');
   const StartButton = document.querySelector('#start-button');
   const width = 10;
@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const allTetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino];
   let currentPosition = 4;
+<<<<<<< HEAD
   let currentRotation = 0;
 
   // Randomly select a tetromino and its first rotation
@@ -73,4 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
     currentPosition += width;
     draw();
   }
+=======
+  let current = allTetrominoes[0][0];
+
+  console.log(allTetrominoes);
+>>>>>>> 72092c1 (Made changes to tetris)
 });
