@@ -29,9 +29,9 @@ function updateSlidePosition() {
 
 function moveToNextSlide() {
   if(slidePosition === totalSlides) {
-    slidePosition = 0; 
+    slidePosition = 0;
   } else {
-    slidePosition += 1; 
+    slidePosition += 1;
   }
   /*
     add an if statement here that checks
