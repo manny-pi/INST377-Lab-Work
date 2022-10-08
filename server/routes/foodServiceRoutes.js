@@ -56,7 +56,7 @@ router
       if (req.query?.resto) {
         console.log('query parameters if any', req.query);
 
-        // A `.filter` function will return the all elements in an array that match a truth check.
+        // A `.filter` function will return all the elements in an array that match a truth check.
         // Here, our truth check is: 'does any element contain our form query'
         // so... 'is there a restaurant with pizza (or steak or so on) in the name in this data set'
         reply = req.foodServiceData.filter((item) => {
