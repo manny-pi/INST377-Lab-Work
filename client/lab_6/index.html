@@ -1,3 +1,48 @@
+<!-- Bring in your successful HTML/CSS from the Flexbox lab -->
+<!-- Your page will need a form in it with an 'action' to /api and a single text field with an id/name of "resto" -->
+<!-- If you open /routes/apiRoutes and go to line 38 you will find the server side answer to your request! -->
+
+<!-- Temporarily unhook your script.js file from your main index file -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1>Prince Okpoziakpo's Lab For INST377</h1>
+        </header>
+        <div class="container">
+            <div class="left_section box">
+                <h2>Form Inputs</h2>
+                <div class="box">
+                    <form action="/api" class="main_form">
+                        <label for="resto">Restaurant Name</label>
+                        <input type="text" name="resto" id="resto">
+                        <button type="submit" id="get-resto ">Submit</button> <!-- -->
+                    </form>
+                </div>
+            </div>
+            <div class="right_section box"> 
+                <h2>Local Restaurants</h2>
+                <div class="box">
+                    A list of restaurants from an API
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            manny-pi: <a href="https://www.github.com/manny-pi">manny-pi</a>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
+
+
 <!--
     This is how to build the CSS-only load animation from loading.io    
     <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
@@ -7,3 +52,4 @@
 
     Try placing it at the same level in your element tree as your Submit button
 -->
+ 
