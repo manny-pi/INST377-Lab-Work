@@ -57,12 +57,12 @@ async function mainEvent() {
     ## Main Event
       Separating your main programming from your side functions will help you organize your thoughts
       When you're not working in a heavily-commented "learning" file, this also is more legible
-      If you separate your work, when one piece is complete, you can save it and trust it
+      If you separate your work, when one piece is compaete, you can save it and trust it
   */
 
   // the async keyword means we can make API requests
   const form = document.querySelector('.main_form'); // get your main form so you can do JS with it
-  const submit = document.querySelector('button[type="submit"]'); // get a reference to your submit button
+  const submit = document.querySelector('#get-resto'); // get a reference to your submit button
   submit.style.display = 'none'; // let your submit button disappear
 
   /*
