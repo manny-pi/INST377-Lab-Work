@@ -238,6 +238,10 @@ margin-bottom: 0.5rem;
     width: 80px;
     height: 80px;
   }
+  
+  .lds-ellipsis_hidden {
+    display: hidden; /* Make sures the element disappears */
+  }
   .lds-ellipsis div {
     position: absolute;
     top: 33px;
