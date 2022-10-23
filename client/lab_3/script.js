@@ -19,7 +19,11 @@ const slidesArray = Array.from(slides);
 const totalSlides = slidesArray.length;
 
 function updateSlidePosition() {
+<<<<<<< HEAD
   slidesArray.forEach((slide) => {
+=======
+  slidesArray.forEach(slide => {
+>>>>>>> 253e978 (made changes to lab3)
     slide.classList.remove('visible');
     slide.classList.add('hidden');
   });
@@ -28,11 +32,25 @@ function updateSlidePosition() {
 }
 
 function moveToNextSlide() {
+<<<<<<< HEAD
   if (slidePosition === totalSlides - 1) {
     slidePosition = 0;
   } else {
     slidePosition += 1;
   }
+=======
+  if(slidePosition === totalSlides) {
+    slidePosition = 0; 
+  } else {
+    slidePosition += 1; 
+  }
+  /*
+    add an if statement here that checks
+    if you're already at the max number of slides
+    and if so, sets your slidePosition to the first index of an array
+    if not, set the slidePosition to the current position plus one
+  */
+>>>>>>> 253e978 (made changes to lab3)
   updateSlidePosition(); // this is how you call a function within a function
 }
 
