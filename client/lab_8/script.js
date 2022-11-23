@@ -12,9 +12,9 @@
 */
 
 function getRandomIntInclusive(min, max) {
-  const mi = Math.ceil(min);
-  const ma = Math.floor(max);
-  return Math.floor(Math.random() * (ma - mi + 1) + mi); // The maximum is inclusive and the minimum is inclusive
+  const newMin = Math.ceil(min);
+  const newMax = Math.floor(max);
+  return Math.floor(Math.random() * (newMax - newMin + 1) + newMin); // The maximum is inclusive and the minimum is inclusive
 }
 
 function injectHTML(list) {
@@ -85,6 +85,34 @@ function filterList(array, filterInputValue) {
   return filteredList;
 }
 
+function initMap() {
+  const map = L.map('map').setView([38.9897, -76.9378], 13); // L is defined in the leaflet namespace
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  return map;
+}
+
+function markerPlace(array, map) {
+  console.log('markerPlace', array);
+  // Remove old markers
+  map.eachLayer((layer) => {
+    if (layer instanceof L.Marker) {
+      layer.remove();
+    }
+  });
+  // Place new markers
+  array.forEach((item, index) => {
+    const coor = item.geocoded_column_1.coordinates;
+    L.marker([coor[1], coor[0]]).addTo(map); // place longitude and latitude markers
+    if (index === 0) { 
+      map.setView([coor[1], coor[0]], 10);
+    }
+  });
+}
+
 async function mainEvent() {
   /*
         ## Main Event
@@ -94,6 +122,7 @@ async function mainEvent() {
       */
 
   // the async keyword means we can make API requests
+  const pageMap = initMap();
   const form = document.querySelector('.main_form'); // get your main form so you can do JS with it
   const submit = document.querySelector('#get-resto'); // get a reference to your submit button
   const loadAnimation = document.querySelector('.lds-ellipsis'); // get a reference to our loading animation
@@ -115,8 +144,8 @@ async function mainEvent() {
       */
   // console.table(arrayFromJson.data);
 
-  // in your browser console, try expanding this object to see what fields are available to work with
-  // for example: arrayFromJson.data[0].name, etc
+  /* in your browser console, try expanding this object to see what fields are available to work with
+   for example: arrayFromJson.data[0].name, etc */
   console.log(arrayFromJson.data[0]);
 
   // this is called "string interpolation" and is how we build large text blocks with variables
@@ -136,6 +165,7 @@ async function mainEvent() {
       console.log(event.target.value);
       const filteredList = filterList(currentList, event.target.value);
       injectHTML(filteredList);
+      markerPlace(filteredList, pageMap);
     });
 
     // And here's an eventListener! It's listening for a "submit" button specifically being clicked
@@ -149,10 +179,12 @@ async function mainEvent() {
 
       // And this function call will perform the "side effect" of injecting the HTML list for you
       injectHTML(currentList);
+      markerPlace(currentList, pageMap);
 
-      // By separating the functions, we open the possibility of regenerating the list
-      // without having to retrieve fresh data every time
-      // We also have access to some form values, so we could filter the list based on name
+      /* By separating the functions, we open the possibility of regenerating the list
+       without having to retrieve fresh data every time
+       We also have access to some form values, so we could filter the list based on name
+       */
     });
   }
 }
