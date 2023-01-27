@@ -134,6 +134,7 @@ async function mainEvent() {
 
     form.addEventListener('input', (event) => { // fires an event whenever an input area is changed (see MDN docs for the 'input' type on events)
       console.log(event.target.value);
+      console.log(event.target);
       const filteredList = filterList(currentList, event.target.value);
       injectHTML(filteredList);
     });
